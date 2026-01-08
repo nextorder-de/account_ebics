@@ -5,18 +5,14 @@
         <field name="model">ebics.batch.log</field>
         <field name="arch" type="xml">
             <search string="Search EBICS Batch Import Log Files">
-                <group col="10" colspan="4">
-                    <field name="create_date" />
-                    <field name="state" />
-                </group>
-                <newline />
-                <group expand="0" string="Group By">
-                    <filter
-                        name="group_by_state"
-                        string="State"
-                        context="{'group_by':'state'}"
-                    />
-                </group>
+                <field name="create_date" />
+                <field name="state" />
+                <separator />
+                <filter
+                    name="group_by_state"
+                    string="State"
+                    context="{'group_by':'state'}"
+                />
             </search>
         </field>
     </record>
@@ -51,7 +47,7 @@
                         help="Reprocess 'draft' EBICS Files"
                         type="object"
                         class="oe_highlight"
-                        invisible="state, '=', 'done' or not has_draft_files"
+                        invisible="state == 'done' or not has_draft_files"
                     />
                     <button
                         name="button_done"
@@ -63,7 +59,6 @@
                         name="state"
                         widget="statusbar"
                         statusbar_visible="draft,done"
-                        statusbar_colors="{'error':'red'}"
                     />
                 </header>
                 <sheet>

@@ -2,7 +2,6 @@
 <odoo>
     <record model="res.groups" id="group_ebics_manager">
         <field name="name">EBICS Manager</field>
-        <field name="category_id" ref="base.module_category_hidden" />
     </record>
 
     <data noupdate="1">

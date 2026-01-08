@@ -23,13 +23,10 @@ class EbicsFile(models.Model):
     _name = "ebics.file"
     _description = "Object to store EBICS Data Files"
     _order = "date desc"
-    _sql_constraints = [
-        (
-            "name_uniq",
-            "unique (name, format_id)",
-            "This File has already been down- or uploaded !",
-        )
-    ]
+    _name_uniq = models.Constraint(
+        "UNIQUE (name, format_id)",
+        "This File has already been down- or uploaded!",
+    )
 
     name = fields.Char(string="Filename")
     data = fields.Binary(string="File", readonly=True)

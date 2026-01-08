@@ -21,23 +21,22 @@
                     domain="[('state', '=', 'draft')]"
                 />
                 <filter string="Done" name="done" domain="[('state', '=', 'done')]" />
-                <group expand="0" string="Group By">
-                    <filter
-                        string="File Format"
-                        name="file_format"
-                        context="{'group_by':'format_id'}"
-                    />
-                    <filter
-                        string="State"
-                        name="state"
-                        context="{'group_by':'state'}"
-                    />
-                    <filter
-                        string="User"
-                        name="user"
-                        context="{'group_by':'user_id'}"
-                    />
-                </group>
+                <separator />
+                <filter
+                    string="File Format"
+                    name="file_format"
+                    context="{'group_by':'format_id'}"
+                />
+                <filter
+                    string="State"
+                    name="state"
+                    context="{'group_by':'state'}"
+                />
+                <filter
+                    string="User"
+                    name="user"
+                    context="{'group_by':'user_id'}"
+                />
             </search>
         </field>
     </record>
