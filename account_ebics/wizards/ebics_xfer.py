@@ -409,7 +409,8 @@ class EbicsXfer(models.TransientModel):
                     ef_note = self.env._("EBICS OrderID: %s") % OrderID
                     if self.env.context.get("origin"):
                         ef_note += (
-                            "\n" + self.env._("Origin: %s") % self._context["origin"]
+                            "\n"
+                            + self.env._("Origin: %s") % self.env.context["origin"]
                         )
                     suffix = self.format_id.suffix
                     fn = self.upload_fname
